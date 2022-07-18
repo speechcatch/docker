@@ -2,5 +2,10 @@
 ref/
 *.out
 
-*/dist/*/*/*/source
-*/dist/*/*/source
+*/dist/*/*/*/source*
+*/dist/*/*/source*
+*/dist/*/*/*/model*
+*/dist/*/*/model*
+images/
+
+*.rpm

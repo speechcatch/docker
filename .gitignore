@@ -7,5 +7,6 @@ ref/
 */dist/*/*/*/model*
 */dist/*/*/model*
 images/
+*/noise/*
 
 *.rpm

@@ -9,6 +9,8 @@ ref/
 images/
 */noise/*
 
+aicc_tts_server/dist/*/*/Model
+
 *.rpm
 
 .DS_Store

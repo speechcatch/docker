@@ -10,3 +10,5 @@ images/
 */noise/*
 
 *.rpm
+
+.DS_Store

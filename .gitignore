@@ -12,3 +12,4 @@ images/
 *.rpm
 
 .DS_Store
+tts/

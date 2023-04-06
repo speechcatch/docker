@@ -21,11 +21,10 @@ RUN ln -s /root/anaconda3/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \
     echo "conda clean -all -y " >> ~/.bashrc
 
 ENV PATH /root/anaconda3/envs/aicc/bin:$PATH
-# Dockerfile에 적용한 ENV는 kubernetes yaml보다 우선순위를 가지므로 혼동을 피하기 위해 아예 뺀다.
-# ENV REDIS_SERVER "host.docker.internal"
-# ENV REDIS_PORT 6379
-# ENV REDIS_PASSWORD ""
-# ENV REDIS_SSL False
+ENV REDIS_SERVER "host.docker.internal"
+ENV REDIS_PORT 6379
+ENV REDIS_PASSWORD ""
+ENV REDIS_SSL False
 ENV RESAMPLER "sox"
 
 RUN /bin/bash -c "pip install sox" 

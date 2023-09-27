@@ -51,5 +51,5 @@ if [ "$DIST" = "onnx" ]; then
     rm -rf dist/${DIST}/${VERSION}/source/*
     rm -rf dist/${DIST}/${VERSION}/source/.git*
     git clone https://github.com/LeeYangseung/grpc_go.git dist/${DIST}/${VERSION}/source
-    docker buildx build --load ${PLATFORM_ARG} -t "${IMAGE_NAME}_onnx:${VERSION}" --build-arg "IMAGE_NAME=${IMAGE_NAME}" --build-arg "VERSION=${VERSION}" "dist/${DIST}/${VERSION}"
+    docker buildx build --load ${PLATFORM_ARG} -t "${IMAGE_NAME}_onnx:${VERSION}" --build-arg "IMAGE_NAME=${IMAGE_NAME}_centos" --build-arg "VERSION=${VERSION}" "dist/${DIST}/${VERSION}"
 fi

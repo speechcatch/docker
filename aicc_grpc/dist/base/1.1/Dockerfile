@@ -14,12 +14,12 @@ RUN apk add -q --update \
             build-base \
     && rm -rf /var/cache/apk/*
 
-RUN go get -u \
-        github.com/funny/crypto \
-        golang.org/x/net \
-        golang.org/x/sys \
-        golang.org/x/text \
-        google.golang.org/genproto \
-        google.golang.org/grpc
+# RUN go get -u \
+#         github.com/funny/crypto \
+#         golang.org/x/net \
+#         golang.org/x/sys \
+#         golang.org/x/text \
+#         google.golang.org/genproto \
+#         google.golang.org/grpc
 	      # google.golang.org/grpc \
     # && rm -rf $GOPATH/src/* && rm -rf $GOPATH/pkg/*

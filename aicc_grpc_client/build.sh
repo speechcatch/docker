@@ -12,8 +12,10 @@ PLATFORM_ARG=`printf '%s ' '--platform'; for var in $(echo ${ARCHES} | sed "s/,/
 echo "Build ${DIST} ${VERSION}"
 
 if [ "$DIST" = "aia" ]; then
+    BASE_NAME="aicc_grpc_client"
+    BASE_VERSION="2.1"
     # gRPC client base image 생성
-    docker buildx build --load ${PLATFORM_ARG} -t "${IMAGE_NAME}:${VERSION}" "dist/base/${VERSION}"
+    docker buildx build --load ${PLATFORM_ARG} -t "${BASE_NAME}:${BASE_VERSION}" "dist/base/${BASE_VERSION}"
 
-    docker buildx build --load ${PLATFORM_ARG} -t "${IMAGE_NAME}_aia:${VERSION}" --build-arg "IMAGE_NAME=${IMAGE_NAME}" --build-arg "VERSION=${VERSION}" "dist/${DIST}/${VERSION}" --no-cache
+    docker buildx build --load ${PLATFORM_ARG} -t "${IMAGE_NAME}_aia:${VERSION}" --build-arg "BUILDER=${BASE_NAME}:${BASE_VERSION}" "dist/${DIST}/${VERSION}" --no-cache
 fi

@@ -14,14 +14,13 @@ RUN go get -u \
         golang.org/x/text \
         google.golang.org/genproto \
         google.golang.org/grpc \
-        github.com/grpc-ecosystem/go-grpc-middleware
-RUN go mod edit -go=1.19
-RUN go mod tidy
+        github.com/grpc-ecosystem/go-grpc-middleware \
+&& go mod edit -go=1.19 \
+&& go mod tidy
 
-
-RUN go build .
-RUN cp ./grpc /
-RUN cp -r settings/ aes/ /
+RUN go build . \
+&&  cp ./grpc / \
+&&  cp -r settings/ aes/ /
 # RUN rm -rf /workspace/
 
 EXPOSE 9200

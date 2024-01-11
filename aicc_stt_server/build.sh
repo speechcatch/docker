@@ -16,7 +16,7 @@ if [ "$DIST" = "aia" ]; then
     BASE_NAME="aicc_stt_server_centos"
     BASE_VERSION="1.44"
     # STT base image 생성
-    docker buildx build --load ${PLATFORM_ARG} -t "${BASE_NAME}:${BASE_VERSION}" "dist/base_centos/${VERSION}"
+    docker buildx build --load ${PLATFORM_ARG} -t "${BASE_NAME}:${BASE_VERSION}" "dist/base_centos/${BASE_VERSION}"
 
     rm -rf dist/${DIST}/${VERSION}/source/*
     rm -rf dist/${DIST}/${VERSION}/source/.git*
@@ -29,7 +29,7 @@ if [ "$DIST" = "adt" ]; then
     BASE_NAME="aicc_stt_server"
     BASE_VERSION="1.48"
     # STT base image 생성
-    docker buildx build --load ${PLATFORM_ARG} -t "${BASE_NAME}:${BASE_VERSION}" "dist/base/${VERSION}"
+    docker buildx build --load ${PLATFORM_ARG} -t "${BASE_NAME}:${BASE_VERSION}" "dist/base/${BASE_VERSION}"
 
     rm -rf dist/${DIST}/${VERSION}/source/*
     rm -rf dist/${DIST}/${VERSION}/source/.git*

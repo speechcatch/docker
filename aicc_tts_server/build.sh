@@ -25,7 +25,7 @@ if [ "$DIST" = "aia" ]; then
   BASE_NAME="aicc_tts_server_centos"
   BASE_VERSION="1.48"
   # TTS base image 생성
-  docker buildx build --load ${PLATFORM_ARG} -t "${BASE_NAME}:${BASE_VERSION}" "dist/base_centos/${VERSION}" --no-cache
+  docker buildx build --load ${PLATFORM_ARG} -t "${BASE_NAME}:${BASE_VERSION}" "dist/base_centos/${BASE_VERSION}"
 
   rm -rf dist/${DIST}/${VERSION}/source/
   git clone -b aia --single-branch https://github.com/speechclone/speechclone_8k_inf.git dist/${DIST}/${VERSION}/source
@@ -41,7 +41,7 @@ if [ "$DIST" = "adt" ]; then
   BASE_NAME="aicc_tts_server"
   BASE_VERSION="2.0"
   # TTS base image 생성
-  docker buildx build --load ${PLATFORM_ARG} -t "${BASE_NAME}:${BASE_VERSION}" "dist/base/${VERSION}" --no-cache
+  docker buildx build --load ${PLATFORM_ARG} -t "${BASE_NAME}:${BASE_VERSION}" "dist/base/${BASE_VERSION}"
 
   rm -rf dist/${DIST}/${VERSION}/source/
   git clone -b adt --single-branch https://github.com/speechclone/speechclone_8k_inf.git dist/${DIST}/${VERSION}/source
